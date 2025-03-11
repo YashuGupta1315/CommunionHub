@@ -153,16 +153,39 @@
     font-style: normal;
     font-size: 2rem;
   }
+
+  .filter-container {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.filter-container label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.filter-container select {
+    font-size: 1rem;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
   @media (max-width: 1024px) {
     .events-page {
         padding: 50px 20px;
     }
 
     .event-container {
-        flex-direction: column; /* Stack form and logo */
+        flex-direction: column; 
         align-items: center;
     }
-
+    .filter-container {
+      flex-direction: column;
+      text-align: center;
+  }
     .event-left,
     .event-right {
         width: 80%;
@@ -178,7 +201,11 @@
     .events-page {
         padding: 40px 15px;
     }
-
+    .filter-container {
+      flex-direction: column;
+      text-align: center;
+      gap: 15px;
+  }
     .event-left,
     .event-right {
         width: 100%;
@@ -233,7 +260,14 @@
         font-size: 0.9rem;
         padding: 8px;
     }
+    .filter-container label {
+      font-size: 1rem;
+  }
 
+  .filter-container select {
+      font-size: 0.9rem;
+      padding: 6px;
+  }
     .event-form {
         padding: 10px;
     }

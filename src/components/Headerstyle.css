@@ -5,7 +5,9 @@ h1, .header-title {
   font-style: normal;
   color: white;
 }
-
+.menu-icon {
+  display: none; /* Hide by default */
+}
 /* Fixed Navbar Styling */
 .main {
   display: flex;
@@ -78,6 +80,7 @@ nav ul li {
 /* ===== Responsive Design ===== */
 @media (max-width: 768px) {
   .main {
+    width: 100%;
     height: 70px;
     padding: 0 15px;
   }
@@ -141,7 +144,7 @@ nav ul li {
     cursor: pointer;
     position: absolute;
     right: 40px;
-    top: 22px;
+    top: 20px;
   }
 }
 
@@ -149,6 +152,7 @@ nav ul li {
   .main {
     height: 60px;
     padding: 0 10px;
+    width: 100%;
   }
 
   .logo-container img {
@@ -162,6 +166,7 @@ nav ul li {
   .menu-icon {
     font-size: 24px;
     right: 50px;
+    top:20px;
   }
   .nav-link::after {
     content: "";

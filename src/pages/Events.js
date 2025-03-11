@@ -24,15 +24,43 @@ const initialEvents = [
 ];
 
 function Events() {
-  const [events, setEvents] = useState(initialEvents); 
+  const [events, setEvents] = useState(initialEvents);
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
   const addEvent = (newEvent) => {
     setEvents([...events, { id: events.length + 1, ...newEvent }]);
   };
+
+  // Get unique categories from events
+  const categories = ["All", ...new Set(events.map(event => event.category))];
+
+  // Filter events based on selected category
+  const filteredEvents = selectedCategory === "All" 
+    ? events 
+    : events.filter(event => event.category === selectedCategory);
+
   return (
     <div className="events-page">
       <h2 className="events-title">Upcoming Events</h2>
-     
-      <EventList events={events} />
+
+      {/* Category Filter Dropdown */}
+      <div className="filter-container">
+        <label htmlFor="category">Filter by Category: </label>
+        <select 
+          id="category" 
+          value={selectedCategory} 
+          onChange={(e) => setSelectedCategory(e.target.value)}
+        >
+          {categories.map(category => (
+            <option key={category} value={category}>{category}</option>
+          ))}
+        </select>
+      </div>
+
+      {/* Filtered Events List */}
+      <EventList events={filteredEvents} />
+
+      {/* Event Form */}
       <div className="Event">
         <h1>Join Us And Take a Step Forward....</h1>
         <EventForm addEvent={addEvent} />

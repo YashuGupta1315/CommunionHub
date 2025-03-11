@@ -4,7 +4,6 @@ import "./Headerstyle.css";
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-
   return (
     <header>
       <div className="main">
@@ -13,12 +12,10 @@ function Header() {
           <h1 className="header-title">CommunionHub</h1>
         </div>
 
-        {/* Hamburger Menu Icon */}
         <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
           <i className={menuOpen ? "fas fa-times" : "fas fa-bars"}></i>
         </div>
 
-        {/* Navigation Menu */}
         <nav className={menuOpen ? "menu-active" : ""}>
           <ul>
             <li><Link to="/" className="nav-link">Home</Link></li>
