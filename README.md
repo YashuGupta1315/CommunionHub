@@ -99,15 +99,7 @@ To set up and run this project locally, follow these steps:
 - The **about section** provides details about the platform with an image and a description.
 - Buttons have hover effects to improve interactivity.
 
-## Customization
 
-### Changing the Favicon
-1. Replace the existing `public/favicon.ico` with your own favicon.
-2. Restart the development server to apply changes.
-
-### Updating Styles
-- Modify `src/styles.css` to customize the design.
-- Adjust the `.home`, `.About`, and `.container` classes to suit your branding.
 
 ## Deployment
 
