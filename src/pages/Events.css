@@ -1,0 +1,256 @@
+/* Events Page */
+.events-page {
+    text-align: center;
+    padding: 80px;
+    background: #f7f7f7;
+  }
+  
+  .events-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Container for the form and logo */
+  .event-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    background-color: #f8f8f8;
+  }
+  
+  /* Left Section - Logo */
+  .event-left {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .event-logo {
+    max-width: 80%;
+    height: auto;
+  }
+  
+  /* Right Section - Form */
+  .event-right {
+    width: 50%;
+    background: white;
+    padding: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .event-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin: auto;
+  }
+  
+  .event-form input,
+  .event-form select,
+  .event-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .event-form button {
+    background: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .event-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Event List Container */
+  .events-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; /* Increased spacing */
+  }
+  
+  /* Event Card */
+  .event-card {
+    width: 320px; /* Increased width slightly for uniformity */
+    height: 420px; /* Adjusted height */
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .event-card:hover {
+    transform: translateY(-5px);
+    cursor: pointer;
+  }
+  
+  /* Event Image */
+  .event-image {
+    width: 100%;
+    height: 220px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .event-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  /* Description Overlay (Hidden by default) */
+  .event-description {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: auto;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1rem;
+  }
+  
+  .event-image:hover .event-description {
+    opacity: 1;
+  }
+  
+  /* Event Details */
+  .event-info {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .Event h1 {
+    color: black;
+    font-family: "Courgette", cursive;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 2rem;
+  }
+  @media (max-width: 1024px) {
+    .events-page {
+        padding: 50px 20px;
+    }
+
+    .event-container {
+        flex-direction: column; /* Stack form and logo */
+        align-items: center;
+    }
+
+    .event-left,
+    .event-right {
+        width: 80%;
+        text-align: center;
+    }
+
+    .event-form {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .events-page {
+        padding: 40px 15px;
+    }
+
+    .event-left,
+    .event-right {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .event-form {
+        padding: 20px;
+    }
+
+    .events-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .event-card {
+        width: 90%;
+        height: auto;
+    }
+
+    .event-image {
+        height: 180px;
+    }
+
+    .event-description {
+        width: 80%;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .events-page {
+        padding: 30px 10px;
+    }
+
+    .event-left,
+    .event-right {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .event-card {
+        width: 100%;
+        height: auto;
+    }
+
+    .event-image {
+        height: 160px;
+    }
+
+    .event-description {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    .event-form {
+        padding: 10px;
+    }
+}
+
+/* Animation for Fade-in Effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.event-card {
+    animation: fadeIn 0.6s ease-in-out;
+}

@@ -1,0 +1,56 @@
+.loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.8); 
+    backdrop-filter: blur(5px);
+    z-index: 9999;
+}
+
+/* Rotating Logo */
+.rotating-logo {
+    width: 100px; 
+    height: 100px;
+    animation: spin 1.5s linear infinite;
+}
+
+/* Animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .rotating-logo {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .rotating-logo {
+        width: 60px;
+        height: 60px;
+    }
+
+    .loader-container {
+        backdrop-filter: blur(3px); 
+    }
+}
+
+@media (max-width: 480px) {
+    .rotating-logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .loader-container {
+        backdrop-filter: blur(2px); 
+    }
+}

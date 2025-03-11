@@ -1,0 +1,185 @@
+/* Global Header Styles */
+h1, .header-title {
+  font-family: "Abril Fatface", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+}
+
+/* Fixed Navbar Styling */
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  background: rgba(0, 0, 0, 0.8); /* Matching header color */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  padding: 0 20px;
+}
+
+/* Logo & Title Styling */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-container img {
+  width: 75px;
+  height: auto;
+}
+
+.logo-container h1 {
+  margin-left: 10px; 
+  font-size: 1.8rem;
+}
+
+/* Navigation Styling */
+nav ul {
+  list-style: none;
+  display: flex;
+  margin-right: 50px;
+}
+
+nav ul li {
+  margin-right: 30px;
+}
+
+/* Navigation Links */
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  position: relative;
+  padding: 8px 15px;
+}
+
+/* Underline Effect */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 3px;
+  background: white;
+  transition: width 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  .main {
+    height: 70px;
+    padding: 0 15px;
+  }
+
+  .logo-container img {
+    width: 65px;
+  }
+
+  .logo-container h1 {
+    font-size: 1.4rem;
+  }
+
+  /* Hide default menu on small screens */
+  nav {
+    display: none;
+  }
+
+  /* Display Menu when Active */
+  .menu-active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+  }
+
+  .menu-active ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .menu-active ul li {
+    margin: 10px 0;
+  }
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 3px;
+    background: white;
+    transition: width 0.3s ease-in-out;
+  }
+  
+  /* Hover Effect */
+  .nav-link:hover::after {
+    width: 100%;
+  }
+  
+  /* Hamburger Menu */
+  .menu-icon {
+    display: block;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    right: 40px;
+    top: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main {
+    height: 60px;
+    padding: 0 10px;
+  }
+
+  .logo-container img {
+    width: 55px;
+  }
+
+  .logo-container h1 {
+    font-size: 1.2rem;
+  }
+
+  .menu-icon {
+    font-size: 24px;
+    right: 50px;
+  }
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 3px;
+    background: white;
+    transition: width 0.3s ease-in-out;
+  }
+  
+  /* Hover Effect */
+  .nav-link:hover::after {
+    width: 100%;
+  }
+  
+  .nav-link {
+    font-size: 16px;
+  }
+}
